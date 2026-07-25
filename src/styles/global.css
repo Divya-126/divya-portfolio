@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@import "./variables.css";
+@import "./typography.css";
+@import "./utilities.css";
+@import "./animations.css";
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: white;
+}
+/* Hide Horizontal Scrollbar */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
