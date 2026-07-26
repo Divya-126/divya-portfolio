@@ -1,9 +1,9 @@
-import doctorBooking from "../assets/images/projects/doctor-booking.WebP";
-import doctorDashboard from "../assets/images/projects/doctor-dashboard.WebP";
-import userAppointments from "../assets/images/projects/user-appointments.WebP";
-import videoCall from "../assets/images/projects/vedio-call.WebP";
-import electionResult from "../assets/images/projects/election-result.WebP";
-import onlineVoting from "../assets/images/projects/online-voting.WebP";
+import doctorBooking from "../assets/images/projects/doctor-booking.webp";
+import doctorDashboard from "../assets/images/projects/doctor-dashboard.webp";
+import userAppointments from "../assets/images/projects/user-appointments.webp";
+import videoCall from "../assets/images/projects/vedio-call.webp";
+import electionResult from "../assets/images/projects/election-result.webp";
+import onlineVoting from "../assets/images/projects/online-voting.webp";
 
 const projectsData = [
   {
