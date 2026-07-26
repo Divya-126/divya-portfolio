@@ -12,12 +12,12 @@ const HeroContent = () => {
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: isMobile ? 25 : 50,
+      x: isMobile ? -40 : -80,
     },
 
     show: {
       opacity: 1,
-      y: 0,
+      x: 0,
     },
   };
 
@@ -42,6 +42,8 @@ const HeroContent = () => {
         lg:text-left
       "
     >
+      {/* Hello */}
+
       <motion.span
         variants={itemVariants}
         transition={{ duration: 0.7 }}
@@ -72,6 +74,8 @@ const HeroContent = () => {
       >
         👋 Hello, I'm
       </motion.span>
+
+      {/* Name */}
 
       <motion.h1
         variants={itemVariants}
@@ -110,6 +114,8 @@ const HeroContent = () => {
           DHOTE
         </span>
       </motion.h1>
+
+      {/* Type Animation */}
 
       <motion.div
         variants={itemVariants}
@@ -168,6 +174,8 @@ const HeroContent = () => {
         </div>
       </motion.div>
 
+      {/* Description */}
+
       <motion.p
         variants={itemVariants}
         transition={{ duration: 0.8 }}
@@ -190,9 +198,32 @@ const HeroContent = () => {
         architecture, performance, and exceptional user experiences.
       </motion.p>
 
-      <HeroButtons />
+      {/* Buttons */}
 
-      <HeroTechStack />
+      <motion.div variants={itemVariants} transition={{ duration: 0.8 }}>
+        <HeroButtons />
+      </motion.div>
+
+      {/* Tech Stack */}
+
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 60,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.8,
+          delay: 0.6,
+          ease: [0.25, 0.46, 0.45, 0.94],
+        }}
+      >
+        <HeroTechStack />
+      </motion.div>
     </motion.div>
   );
 };
