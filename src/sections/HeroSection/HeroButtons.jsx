@@ -3,9 +3,30 @@ import Button from "../../components/ui/Button";
 
 const HeroButtons = () => {
   return (
-    <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
+    <div
+      className="
+        mt-10
+
+        flex
+        w-full
+        flex-col
+
+        items-stretch
+        gap-4
+
+        sm:flex-row
+        sm:items-center
+
+        lg:w-auto
+      "
+    >
       <Button
-        className="cursor-pointer"
+        className="
+          w-full
+          cursor-pointer
+
+          sm:w-auto
+        "
         leftIcon={<FolderOpen size={18} />}
         onClick={() => {
           document.getElementById("projects")?.scrollIntoView({
@@ -16,11 +37,20 @@ const HeroButtons = () => {
         View Projects
       </Button>
 
-      <a href="/resume.pdf" download="Divya_Dhote_Resume.pdf">
+      <a
+        href="/resume.pdf"
+        download="Divya_Dhote_Resume.pdf"
+        className="w-full sm:w-auto"
+      >
         <Button
-          className="cursor-pointer"
           variant="secondary"
           leftIcon={<Download size={18} />}
+          className="
+            w-full
+            cursor-pointer
+
+            sm:w-auto
+          "
         >
           Download Resume
         </Button>

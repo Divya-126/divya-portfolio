@@ -190,13 +190,9 @@ const HeroContent = () => {
         architecture, performance, and exceptional user experiences.
       </motion.p>
 
-      <motion.div variants={itemVariants} className="mt-10">
-        <HeroButtons />
-      </motion.div>
+      <HeroButtons />
 
-      <motion.div variants={itemVariants} className="mt-10 w-full">
-        <HeroTechStack />
-      </motion.div>
+      <HeroTechStack />
     </motion.div>
   );
 };

@@ -13,21 +13,21 @@ const HeroSection = () => {
         relative
 
         overflow-x-hidden
+        overflow-y-visible
 
         bg-white
         dark:bg-slate-950
 
-        pt-28
-        pb-14
+        pt-20
+        lg:pt-20
+
+        pb-10
+        lg:pb-0
 
         min-h-screen
 
-        lg:pt-0
-        lg:pb-0
-
         flex
-        items-start
-        lg:items-center
+        items-center
 
         transition-colors
         duration-500
