@@ -1,5 +1,3 @@
-import { forwardRef } from "react";
-
 import clsx from "clsx";
 
 const FormTextarea = ({ label, error, className, ...props }) => {
@@ -12,7 +10,9 @@ const FormTextarea = ({ label, error, className, ...props }) => {
             block
             text-sm
             font-medium
+
             text-slate-700
+            dark:text-slate-300
           "
         >
           {label}
@@ -26,16 +26,27 @@ const FormTextarea = ({ label, error, className, ...props }) => {
           `
             w-full
             resize-none
+
             rounded-2xl
+
             border
-            bg-transparent
+
+            bg-white
+            dark:bg-slate-900/60
+
             px-4
             py-3
 
-            text-slate-800
+            text-slate-900
+            dark:text-white
+
             placeholder:text-slate-400
+            dark:placeholder:text-slate-500
+
+            caret-indigo-500
 
             outline-none
+
             transition-all
             duration-300
 
@@ -45,15 +56,20 @@ const FormTextarea = ({ label, error, className, ...props }) => {
           `,
           error
             ? `
-              border-red-300
-              focus:border-red-400
-              focus:ring-red-100
-            `
+                border-red-300
+                focus:border-red-400
+                focus:ring-red-100
+              `
             : `
-              border-slate-200
-              focus:border-indigo-400
-              focus:ring-indigo-100
-            `,
+                border-slate-200
+                dark:border-slate-700
+
+                focus:border-indigo-400
+                dark:focus:border-indigo-400
+
+                focus:ring-indigo-100
+                dark:focus:ring-indigo-500/20
+              `,
           className,
         )}
       />
@@ -65,6 +81,7 @@ const FormTextarea = ({ label, error, className, ...props }) => {
             `
               text-sm
               text-red-500
+
               transition-all
               duration-300
             `,
