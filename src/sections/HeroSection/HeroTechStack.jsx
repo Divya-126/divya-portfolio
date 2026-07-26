@@ -12,7 +12,9 @@ const HeroTechStack = () => {
           font-semibold
           uppercase
           tracking-[0.2em]
-          text-[var(--color-text-secondary)]
+
+          text-slate-500
+          dark:text-slate-400
         "
       >
         Tech Stack
@@ -20,16 +22,16 @@ const HeroTechStack = () => {
 
       <div
         className="
-    flex
-    gap-4
+          flex
+          gap-4
 
-    overflow-x-auto
-    overflow-y-hidden
+          overflow-x-auto
+          overflow-y-hidden
 
-    pb-2
+          pb-2
 
-    scrollbar-none
-  "
+          scrollbar-hide
+        "
       >
         {techStackData.map((tech, index) => {
           const Icon = tech.icon;
@@ -56,152 +58,159 @@ const HeroTechStack = () => {
                 delay: index * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              animate={{
-                y: [0, -10, 0],
-              }}
               className="
-    shrink-0
+                group
+                relative
 
-    group
-    relative
+                flex
+                shrink-0
+                items-center
+                justify-center
 
-    flex
-    items-center
-    justify-center
+                h-16
+                w-16
 
-    rounded-2xl
-    border
-    border-white/40
+                rounded-2xl
 
-    bg-white/60
+                border
+                border-slate-200
+                dark:border-white/10
 
-    p-4
+                bg-white/80
+                dark:bg-slate-900/70
 
-    backdrop-blur-xl
-    shadow-sm
+                backdrop-blur-xl
 
-    cursor-pointer
+                shadow-md
+                dark:shadow-[0_20px_40px_rgba(0,0,0,0.35)]
 
-    transition-all
-    duration-500
+                cursor-pointer
 
-    hover:-translate-y-3
-    hover:scale-105
+                transition-all
+                duration-500
 
-    hover:border-indigo-200
-    hover:shadow-[0_20px_50px_rgba(99,102,241,0.18)]
-  "
+                hover:-translate-y-2
+                hover:scale-110
+
+                hover:border-indigo-400
+                dark:hover:border-indigo-500/50
+
+                hover:bg-white
+                dark:hover:bg-slate-900
+
+                hover:shadow-[0_20px_45px_rgba(99,102,241,0.25)]
+              "
             >
-              {/* Glass Glow */}
-
+              {/* Gradient Glow */}
               <div
                 className="
-                    absolute
-                    inset-0
+                  absolute
+                  inset-0
 
-                    rounded-2xl
+                  rounded-2xl
 
-                    bg-gradient-to-br
-                    from-indigo-500/0
-                    via-purple-500/0
-                    to-cyan-500/0
+                  bg-gradient-to-br
+                  from-indigo-500/0
+                  via-violet-500/0
+                  to-cyan-500/0
 
-                    opacity-0
+                  opacity-0
 
-                    transition-all
-                    duration-500
+                  transition-all
+                  duration-500
 
-                    group-hover:opacity-100
-                    group-hover:from-indigo-500/10
-                    group-hover:via-purple-500/10
-                    group-hover:to-cyan-500/10
-                  "
+                  group-hover:opacity-100
+                  group-hover:from-indigo-500/10
+                  group-hover:via-violet-500/10
+                  group-hover:to-cyan-500/10
+                "
               />
 
               {/* Shine */}
-
               <div
                 className="
-                    pointer-events-none
+                  pointer-events-none
 
-                    absolute
-                    inset-0
+                  absolute
+                  inset-0
 
-                    rounded-2xl
+                  rounded-2xl
 
-                    bg-gradient-to-br
-                    from-white/30
-                    via-transparent
-                    to-transparent
-                  "
+                  bg-gradient-to-br
+                  from-white/40
+                  via-white/5
+                  to-transparent
+
+                  dark:from-white/10
+                  dark:via-transparent
+                "
               />
 
               {/* Icon */}
-
               <motion.div
                 animate={{
-                  y: [0, -10, 0],
+                  y: [0, -8, 0],
                 }}
                 transition={{
-                  duration: 2.5 + index * 0.4,
-
+                  duration: 2.5 + index * 0.3,
                   repeat: Infinity,
-
                   repeatType: "mirror",
-
                   ease: "easeInOut",
                 }}
-                className="
-                    relative
-                    z-10
-                  "
+                className="relative z-10"
               >
                 <Icon
                   size={34}
                   color={tech.color}
                   className="
-                      transition-all
-                      duration-500
+                    drop-shadow-md
 
-                      group-hover:scale-125
-                    "
+                    transition-all
+                    duration-500
+
+                    group-hover:scale-125
+                    group-hover:rotate-6
+                  "
                 />
               </motion.div>
 
               {/* Tooltip */}
-
               <span
                 className="
-                    pointer-events-none
+                  pointer-events-none
 
-                    absolute
-                    -bottom-10
-                    left-1/2
+                  absolute
+                  -bottom-11
+                  left-1/2
 
-                    -translate-x-1/2
+                  -translate-x-1/2
 
-                    whitespace-nowrap
+                  whitespace-nowrap
 
-                    rounded-lg
+                  rounded-lg
 
-                    bg-slate-900
+                  bg-slate-900
+                  dark:bg-white
 
-                    px-3
-                    py-1.5
+                  px-3
+                  py-1.5
 
-                    text-xs
-                    font-medium
-                    text-white
+                  text-xs
+                  font-semibold
 
-                    opacity-0
+                  text-white
+                  dark:text-slate-900
 
-                    shadow-lg
+                  opacity-0
 
-                    transition-all
-                    duration-300
+                  shadow-lg
 
-                    group-hover:opacity-100
-                  "
+                  transition-all
+                  duration-300
+
+                  group-hover:-translate-y-1
+                  group-hover:opacity-100
+                "
               >
                 {tech.name}
               </span>
