@@ -1,5 +1,11 @@
-/* Then the rest of your imports/rules */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap");
+
 @import "tailwindcss";
+
+@import "./styles/variables.css";
+@import "./styles/typography.css";
+@import "./styles/utilities.css";
+@import "./styles/animations.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -7,40 +13,35 @@ html,
 body,
 #root {
   width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
 }
-* {
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% center;
-  }
-
-  100% {
-    background-position: 200% center;
-  }
-}
-@keyframes floating {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
+::selection {
+  background: var(--color-primary);
+  color: white;
 }
 
-.animate-floating {
-  animation: floating 3s ease-in-out infinite;
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-.animate-gradient {
-  animation: gradient 4s linear infinite;
-}
-
-::-webkit-scrollbar {
-  width: 0;
+.scrollbar-hide {
+  scrollbar-width: none;
 }
