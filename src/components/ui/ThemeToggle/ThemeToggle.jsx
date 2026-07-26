@@ -23,6 +23,7 @@ const ThemeToggle = () => {
 
         bg-white/80
         dark:bg-slate-900/80
+         cursor-pointer
 
         backdrop-blur-xl
 
