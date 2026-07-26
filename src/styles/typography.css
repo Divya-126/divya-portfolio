@@ -1,5 +1,5 @@
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Comic Sans MS", cursive !important;
 }
 
 h1,
@@ -8,5 +8,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Courier New", monospace !important;
 }
