@@ -46,9 +46,11 @@ const HeroContent = () => {
         variants={itemVariants}
         transition={{ duration: 0.7 }}
         className="
+          mt-8
           inline-flex
           items-center
           rounded-full
+
           border
           border-indigo-200
           dark:border-indigo-500/20
@@ -58,13 +60,14 @@ const HeroContent = () => {
 
           px-4
           py-2
+
           text-sm
           font-medium
 
           text-indigo-600
           dark:text-indigo-300
 
-          mt-8 lg:mt-12
+          lg:mt-12
         "
       >
         👋 Hello, I'm
@@ -75,6 +78,7 @@ const HeroContent = () => {
         transition={{ duration: 0.8 }}
         className="
           mt-6
+
           text-5xl
           font-bold
           leading-tight
@@ -92,9 +96,12 @@ const HeroContent = () => {
           className="
             bg-gradient-to-r
             from-slate-700
-            dark:from-white
             via-indigo-500
             to-cyan-500
+
+            dark:from-white
+            dark:via-indigo-300
+            dark:to-cyan-300
 
             bg-clip-text
             text-transparent
@@ -109,15 +116,20 @@ const HeroContent = () => {
         transition={{ duration: 0.8 }}
         className="
           mt-6
+
           rounded-2xl
 
-          bg-white/20
-          dark:bg-slate-900/30
+          border
+          border-slate-200
+          dark:border-white/10
+
+          bg-white/70
+          dark:bg-slate-900/60
 
           px-6
           py-3
 
-          backdrop-blur-sm
+          backdrop-blur-xl
         "
       >
         <div
@@ -161,7 +173,9 @@ const HeroContent = () => {
         transition={{ duration: 0.8 }}
         className="
           mt-8
+
           max-w-xl
+
           text-base
           leading-8
 
@@ -176,12 +190,12 @@ const HeroContent = () => {
         architecture, performance, and exceptional user experiences.
       </motion.p>
 
-      <motion.div variants={itemVariants}>
+      <motion.div variants={itemVariants} className="mt-10">
         <HeroButtons />
       </motion.div>
 
-      <motion.div variants={itemVariants}>
-        <HeroTechStack className="mt-8 lg:mt-12" />
+      <motion.div variants={itemVariants} className="mt-10 w-full">
+        <HeroTechStack />
       </motion.div>
     </motion.div>
   );

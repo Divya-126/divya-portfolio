@@ -20,15 +20,13 @@ const HeroTechStack = () => {
         Tech Stack
       </p>
 
-      <div className="pt-4 pb-6">
+      <div className="py-4">
         <div
           className="
             flex
             gap-4
 
             overflow-x-auto
-            overflow-y-visible
-
             scrollbar-hide
           "
         >
@@ -53,7 +51,7 @@ const HeroTechStack = () => {
                   once: true,
                 }}
                 transition={{
-                  duration: 0.8,
+                  duration: 0.7,
                   delay: index * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
@@ -62,12 +60,12 @@ const HeroTechStack = () => {
                   relative
 
                   flex
-                  shrink-0
-                  items-center
-                  justify-center
-
                   h-16
                   w-16
+                  shrink-0
+
+                  items-center
+                  justify-center
 
                   rounded-2xl
 
@@ -83,24 +81,20 @@ const HeroTechStack = () => {
                   shadow-md
                   dark:shadow-[0_20px_40px_rgba(0,0,0,0.35)]
 
-                  cursor-pointer
-
                   transition-all
                   duration-500
 
-                  hover:-translate-y-2
                   hover:scale-105
 
                   hover:border-indigo-400
                   dark:hover:border-indigo-500/50
 
-                  hover:bg-white
-                  dark:hover:bg-slate-900
+                  hover:shadow-[0_18px_45px_rgba(99,102,241,0.25)]
 
-                  hover:shadow-[0_20px_45px_rgba(99,102,241,0.25)]
+                  active:scale-95
                 "
               >
-                {/* Gradient Glow */}
+                {/* Hover Glow */}
                 <div
                   className="
                     absolute
@@ -141,19 +135,17 @@ const HeroTechStack = () => {
                     to-transparent
 
                     dark:from-white/10
-                    dark:via-transparent
                   "
                 />
 
                 {/* Icon */}
                 <motion.div
                   animate={{
-                    y: [0, -8, 0],
+                    y: [0, -5, 0],
                   }}
                   transition={{
-                    duration: 2.5 + index * 0.3,
+                    duration: 2.5 + index * 0.25,
                     repeat: Infinity,
-                    repeatType: "mirror",
                     ease: "easeInOut",
                   }}
                   className="relative z-10"
@@ -167,8 +159,9 @@ const HeroTechStack = () => {
                       transition-all
                       duration-500
 
-                      group-hover:scale-125
+                      group-hover:-translate-y-1
                       group-hover:rotate-6
+                      group-hover:scale-125
                     "
                   />
                 </motion.div>
@@ -179,8 +172,10 @@ const HeroTechStack = () => {
                     pointer-events-none
 
                     absolute
-                    -bottom-11
                     left-1/2
+                    top-full
+
+                    mt-3
 
                     -translate-x-1/2
 
@@ -207,8 +202,8 @@ const HeroTechStack = () => {
                     transition-all
                     duration-300
 
-                    group-hover:-translate-y-1
                     group-hover:opacity-100
+                    group-hover:translate-y-1
                   "
                 >
                   {tech.name}

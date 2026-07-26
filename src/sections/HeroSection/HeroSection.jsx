@@ -1,9 +1,9 @@
 import Container from "../../components/ui/Container";
 import Section from "../../components/ui/Section";
 
+import HeroBackground from "./HeroBackground";
 import HeroContent from "./HeroContent";
 import HeroImage from "./HeroImage";
-import HeroBackground from "./HeroBackground";
 
 const HeroSection = () => {
   return (
@@ -11,15 +11,17 @@ const HeroSection = () => {
       id="home"
       className="
         relative
-        overflow-hidden
+
+        overflow-x-hidden
 
         bg-white
         dark:bg-slate-950
 
         pt-28
-        pb-10
+        pb-14
 
-        lg:min-h-screen
+        min-h-screen
+
         lg:pt-0
         lg:pb-0
 
@@ -48,12 +50,7 @@ const HeroSection = () => {
         >
           <HeroContent />
 
-          <div
-            className="
-              mt-8
-              lg:mt-0
-            "
-          >
+          <div className="mt-8 lg:mt-0">
             <HeroImage />
           </div>
         </div>
