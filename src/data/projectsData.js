@@ -4,6 +4,9 @@ import userAppointments from "../assets/images/projects/user-appointments.webp";
 import videoCall from "../assets/images/projects/vedio-call.webp";
 import electionResult from "../assets/images/projects/election-result.webp";
 import onlineVoting from "../assets/images/projects/online-voting.webp";
+import gameHome from "../assets/images/projects/game-home.png";
+import gameStart from "../assets/images/projects/game-start.png";
+import gameRules from "../assets/images/projects/game-rules.png";
 
 const projectsData = [
   {
@@ -11,7 +14,7 @@ const projectsData = [
 
     featured: true,
 
-    title: "Doctor Appointment Booking System",
+    title: "Doctor Appointment Booking System 🏥",
 
     category: "MERN",
 
@@ -47,7 +50,7 @@ const projectsData = [
 
     featured: false,
 
-    title: "Online Voting System",
+    title: "Online Voting System 👆",
 
     category: "PHP",
 
@@ -73,26 +76,28 @@ const projectsData = [
 
     featured: false,
 
-    title: "Online Voting System",
+    title: "Dice Game 🎲 ",
 
     category: "REACT",
 
-    images: [onlineVoting, electionResult],
+    images: [gameHome, gameStart, gameRules],
 
-    description: "A dashboard for monitoring elections and viewing results.",
+    description:
+      "An engaging dice game built with React, featuring score tracking, smooth gameplay, and a modern responsive design.",
 
-    technologies: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript"],
+    technologies: ["React"],
 
     features: [
-      "User Authentication",
-      "Secure Voting",
-      "Admin Panel",
-      "Vote Counting",
+      "🎲 Interactive Dice Rolling",
+      "🎯 Number Guessing Gameplay",
+      "📊 Real-Time Score Tracking",
+      "🔄 Score Reset & Game Rules",
+      "📱 Fully Responsive Design",
     ],
 
-    github: "https://github.com/Divya-126",
+    github: "https://github.com/Divya-126/dice-game",
 
-    live: "https://github.com/Divya-126",
+    live: "https://dice-game126.vercel.app/",
   },
   {
     id: 4,
