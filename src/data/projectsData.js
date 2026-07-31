@@ -7,6 +7,9 @@ import onlineVoting from "../assets/images/projects/online-voting.webp";
 import gameHome from "../assets/images/projects/game-home.png";
 import gameStart from "../assets/images/projects/game-start.png";
 import gameRules from "../assets/images/projects/game-rules.png";
+import todolistHome from "../assets/images/projects/todolist-home.png";
+import todolistTaskAdded from "../assets/images/projects/todolist-taskAdded.png";
+import todolistTaskCompleted from "../assets/images/projects/todolist-taskCompleted.png";
 
 const projectsData = [
   {
@@ -50,32 +53,6 @@ const projectsData = [
 
     featured: false,
 
-    title: "Online Voting System 👆",
-
-    category: "PHP",
-
-    images: [onlineVoting, electionResult],
-
-    description:
-      "A secure platform for conducting digital elections and voting.",
-    technologies: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript"],
-
-    features: [
-      "User Authentication",
-      "Secure Voting",
-      "Admin Panel",
-      "Vote Counting",
-    ],
-
-    github: "https://github.com/Divya-126",
-
-    live: "https://github.com/Divya-126",
-  },
-  {
-    id: 3,
-
-    featured: false,
-
     title: "Dice Game 🎲 ",
 
     category: "REACT",
@@ -98,6 +75,34 @@ const projectsData = [
     github: "https://github.com/Divya-126/dice-game",
 
     live: "https://dice-game126.vercel.app/",
+  },
+  {
+    id: 3,
+
+    featured: false,
+
+    title: "To-Do-List 📝",
+
+    category: "REACT",
+
+    images: [todolistHome, todolistTaskAdded.todolistTaskCompleted],
+
+    description:
+      "📝 A responsive To-Do List application built with React.js that allows users to add, edit, delete, complete, and manage tasks with Local Storage support for persistent data.",
+
+    technologies: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript"],
+
+    features: [
+      "📝 Add New Tasks",
+      "✏️ Edit Existing Tasks",
+      "🗑️ Remove Tasks",
+      "✅ Track Task Completion",
+      "💾 Auto Save with Local Storage",
+    ],
+
+    github: "https://github.com/Divya-126/to-do-list",
+
+    live: "https://to-do-list126.vercel.app/",
   },
   {
     id: 4,
@@ -156,14 +161,14 @@ const projectsData = [
 
     featured: false,
 
-    title: "Online Voting System",
+    title: "Online Voting System 👆",
 
-    category: "REACT",
+    category: "PHP",
 
     images: [onlineVoting, electionResult],
 
-    description: "A dashboard for monitoring elections and viewing results.",
-
+    description:
+      "A secure platform for conducting digital elections and voting.",
     technologies: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript"],
 
     features: [
