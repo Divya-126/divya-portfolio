@@ -94,7 +94,7 @@ const MobileMenu = ({ isOpen, onClose, activeSection }) => {
           
                   p-2
                   transition
-                  hover:bg-red-500
+                 bg-red-500
                 "
               >
                 <X size={22} color="black" />
