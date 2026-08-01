@@ -91,12 +91,13 @@ const MobileMenu = ({ isOpen, onClose, activeSection }) => {
                 onClick={onClose}
                 className="
                   rounded-lg
+          
                   p-2
                   transition
-                  hover:bg-slate-100
+                  hover:bg-red-500
                 "
               >
-                <X size={22} />
+                <X size={22} color="black" />
               </button>
             </div>
 
