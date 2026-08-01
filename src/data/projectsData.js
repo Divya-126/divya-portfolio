@@ -42,10 +42,6 @@ const projectsData = [
       "Responsive Design",
       "Online Payments",
     ],
-
-    github: " https://github.com/Divya-126",
-
-    live: "https://github.com/Divya-126",
   },
 
   {
