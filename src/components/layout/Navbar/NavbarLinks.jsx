@@ -33,6 +33,7 @@ const NavbarLinks = ({ activeSection }) => {
                 py-1
 
                 text-[15px]
+
                 font-medium
                 tracking-wide
 
@@ -54,15 +55,19 @@ const NavbarLinks = ({ activeSection }) => {
             >
               {link.label}
 
-              {/* Animated Underline */}
+              {/* Animated Dot */}
 
               <span
                 className={`
                   absolute
-                  left-0
+
+                  left-1/2
                   -bottom-3
 
-                  h-[3px]
+                  h-2.5
+                  w-2.5
+
+                  -translate-x-1/2
 
                   rounded-full
 
@@ -71,11 +76,17 @@ const NavbarLinks = ({ activeSection }) => {
                   via-purple-500
                   to-cyan-500
 
+                  shadow-[0_0_10px_rgba(99,102,241,0.45)]
+
                   transition-all
                   duration-300
                   ease-out
 
-                  ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+                  ${
+                    isActive
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100"
+                  }
                 `}
               />
             </a>
