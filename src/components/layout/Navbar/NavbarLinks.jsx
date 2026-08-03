@@ -7,13 +7,14 @@ const NavbarLinks = ({ activeSection }) => {
       layout
       className="
         hidden
+
         md:flex
 
         items-center
 
-        gap-4
-        lg:gap-6
-        xl:gap-8
+gap-4
+lg:gap-6
+xl:gap-8
       "
     >
       {navigationLinks.map((link) => {
@@ -22,72 +23,63 @@ const NavbarLinks = ({ activeSection }) => {
         const isActive = activeSection === sectionId;
 
         return (
-          <li key={link.id}>
+          <li key={link.id} className="relative">
             <a
               href={link.href}
               className={`
-                group
-                relative
+                  relative
 
-                px-1
-                py-1
+                  px-1
+                  py-1
 
                 text-[15px]
+              
 
-                font-medium
-                tracking-wide
-
-                transition-all
-                duration-300
-
-                ${
-                  isActive
-                    ? `
-                      text-indigo-600
-                      drop-shadow-[0_0_12px_rgba(99,102,241,0.35)]
-                    `
-                    : `
-                      text-slate-700
-                      hover:text-indigo-600
-                    `
-                }
-              `}
-            >
-              {link.label}
-
-              {/* Animated Dot */}
-
-              <span
-                className={`
-                  absolute
-
-                  left-1/2
-                  -bottom-3
-
-                  h-2.5
-                  w-2.5
-
-                  -translate-x-1/2
-
-                  rounded-full
-
-                  bg-gradient-to-r
-                  from-indigo-500
-                  via-purple-500
-                  to-cyan-500
-
-                  shadow-[0_0_10px_rgba(99,102,241,0.45)]
+                  font-medium
+                  tracking-wide
 
                   transition-all
-                  duration-300
-                  ease-out
+                  duration-300z
 
                   ${
                     isActive
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100"
+                      ? `
+                        text-indigo-600
+                        drop-shadow-[0_0_12px_rgba(99,102,241,0.35)]
+                      `
+                      : `
+                        text-slate-700
+                        hover:text-indigo-600
+                      `
                   }
                 `}
+            >
+              {link.label}
+
+              <motion.span
+                className="
+                    absolute
+                    -bottom-3
+                    left-0
+
+                    h-1
+                    rounded-full
+
+                    bg-gradient-to-r
+                    from-indigo-500
+                    via-purple-500
+                    to-cyan-500
+                  "
+                animate={{
+                  width: isActive ? "100%" : "0%",
+                  opacity: isActive ? 1 : 0,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 28,
+                  mass: 0.8,
+                }}
               />
             </a>
           </li>
