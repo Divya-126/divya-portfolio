@@ -18,11 +18,10 @@ const NavbarLinks = ({ activeSection }) => {
     >
       {navigationLinks.map((link) => {
         const sectionId = link.href.replace("#", "");
-
         const isActive = activeSection === sectionId;
 
         return (
-          <li key={link.id} className="relative">
+          <li key={link.id}>
             <a
               href={link.href}
               className={`
@@ -55,40 +54,65 @@ const NavbarLinks = ({ activeSection }) => {
             >
               {link.label}
 
-              <motion.span
-                className="
-                  absolute
-                  left-0
-                  -bottom-3
+              {/* Hover Underline */}
 
-                  h-1
-                  w-full
+              {!isActive && (
+                <span
+                  className="
+                    absolute
+                    left-0
+                    -bottom-3
 
-                  rounded-full
+                    h-1
+                    w-full
 
-                  bg-gradient-to-r
-                  from-indigo-500
-                  via-purple-500
-                  to-cyan-500
+                    rounded-full
 
-                  origin-left
-                "
-                initial={false}
-                animate={{
-                  scaleX: isActive ? 1 : 0,
-                  opacity: isActive ? 1 : 1,
-                }}
-                whileHover={{
-                  scaleX: 1,
-                }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeOut",
-                }}
-                style={{
-                  transformOrigin: "left",
-                }}
-              />
+                    bg-gradient-to-r
+                    from-indigo-500
+                    via-purple-500
+                    to-cyan-500
+
+                    origin-left
+
+                    scale-x-0
+
+                    transition-transform
+                    duration-300
+                    ease-out
+
+                    group-hover:scale-x-100
+                  "
+                />
+              )}
+
+              {/* Active Underline */}
+
+              {isActive && (
+                <motion.span
+                  layoutId="navbar-underline"
+                  className="
+                    absolute
+                    left-0
+                    -bottom-3
+
+                    h-1
+                    w-full
+
+                    rounded-full
+
+                    bg-gradient-to-r
+                    from-indigo-500
+                    via-purple-500
+                    to-cyan-500
+                  "
+                  transition={{
+                    type: "spring",
+                    stiffness: 350,
+                    damping: 30,
+                  }}
+                />
+              )}
             </a>
           </li>
         );
