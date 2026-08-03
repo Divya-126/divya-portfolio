@@ -18,6 +18,7 @@ const NavbarLinks = ({ activeSection }) => {
     >
       {navigationLinks.map((link) => {
         const sectionId = link.href.replace("#", "");
+
         const isActive = activeSection === sectionId;
 
         return (
@@ -32,7 +33,6 @@ const NavbarLinks = ({ activeSection }) => {
                 py-1
 
                 text-[15px]
-
                 font-medium
                 tracking-wide
 
@@ -54,65 +54,30 @@ const NavbarLinks = ({ activeSection }) => {
             >
               {link.label}
 
-              {/* Hover Underline */}
+              {/* Animated Underline */}
 
-              {!isActive && (
-                <span
-                  className="
-                    absolute
-                    left-0
-                    -bottom-3
+              <span
+                className={`
+                  absolute
+                  left-0
+                  -bottom-3
 
-                    h-1
-                    w-full
+                  h-[3px]
 
-                    rounded-full
+                  rounded-full
 
-                    bg-gradient-to-r
-                    from-indigo-500
-                    via-purple-500
-                    to-cyan-500
+                  bg-gradient-to-r
+                  from-indigo-500
+                  via-purple-500
+                  to-cyan-500
 
-                    origin-left
+                  transition-all
+                  duration-300
+                  ease-out
 
-                    scale-x-0
-
-                    transition-transform
-                    duration-300
-                    ease-out
-
-                    group-hover:scale-x-100
-                  "
-                />
-              )}
-
-              {/* Active Underline */}
-
-              {isActive && (
-                <motion.span
-                  layoutId="navbar-underline"
-                  className="
-                    absolute
-                    left-0
-                    -bottom-3
-
-                    h-1
-                    w-full
-
-                    rounded-full
-
-                    bg-gradient-to-r
-                    from-indigo-500
-                    via-purple-500
-                    to-cyan-500
-                  "
-                  transition={{
-                    type: "spring",
-                    stiffness: 350,
-                    damping: 30,
-                  }}
-                />
-              )}
+                  ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+                `}
+              />
             </a>
           </li>
         );
