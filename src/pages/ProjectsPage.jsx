@@ -102,7 +102,9 @@ const ProjectsPage = () => {
           bg-indigo-300/20
           dark:bg-indigo-500/15
 
-          blur-[150px]
+          blur-2xl
+          md:blur-[120px]
+          pointer-events-none
         "
       />
 
@@ -120,7 +122,9 @@ const ProjectsPage = () => {
           bg-cyan-300/20
           dark:bg-cyan-500/15
 
-          blur-[150px]
+          blur-2xl
+          md:blur-[120px]
+          pointer-events-none
         "
       />
 
@@ -323,7 +327,9 @@ const ProjectsPage = () => {
             p-5
             md:p-8
 
-            backdrop-blur-2xl
+            backdrop-blur-md
+            md:backdrop-blur-2xl
+            transform-gpu
 
             shadow-[0_20px_80px_rgba(15,23,42,0.06)]
             dark:shadow-[0_30px_90px_rgba(0,0,0,0.45)]

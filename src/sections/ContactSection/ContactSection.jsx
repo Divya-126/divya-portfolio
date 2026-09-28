@@ -34,7 +34,9 @@ const ContactSection = () => {
           bg-indigo-500/10
           dark:bg-indigo-500/15
 
-          blur-3xl
+          blur-2xl
+          md:blur-3xl
+          pointer-events-none
         "
       />
 
@@ -50,7 +52,9 @@ const ContactSection = () => {
           bg-cyan-500/10
           dark:bg-cyan-500/15
 
-          blur-3xl
+          blur-2xl
+          md:blur-3xl
+          pointer-events-none
         "
       />
 

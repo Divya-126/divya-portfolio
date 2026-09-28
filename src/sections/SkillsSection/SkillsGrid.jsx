@@ -18,7 +18,7 @@ const SkillsGrid = () => {
     <motion.div
       initial={{
         opacity: 0,
-        y: 120,
+        y: isMobile ? 25 : 50,
       }}
       whileInView={{
         opacity: 1,
@@ -29,50 +29,55 @@ const SkillsGrid = () => {
         amount: 0.05,
       }}
       transition={{
-        duration: isMobile ? 1.4 : 1.2,
+        duration: isMobile ? 0.5 : 0.7,
         ease: [0.16, 1, 0.3, 1],
       }}
       className="
         relative
         transform-gpu
-        will-change-transform
       "
     >
       <div
         className="
           absolute
-          -left-24
+          -left-20
           top-0
 
-          h-80
-          w-80
+          h-64
+          w-64
+          md:h-80
+          md:w-80
 
           rounded-full
 
           bg-indigo-300/20
           dark:bg-indigo-500/15
 
-          blur-2xl
+          blur-xl
           md:blur-3xl
+          pointer-events-none
         "
       />
 
       <div
         className="
           absolute
-          -right-24
+          -right-20
           bottom-0
 
-          h-80
-          w-80
+          h-64
+          w-64
+          md:h-80
+          md:w-80
 
           rounded-full
 
           bg-cyan-300/20
           dark:bg-cyan-500/15
 
-          blur-2xl
+          blur-xl
           md:blur-3xl
+          pointer-events-none
         "
       />
 
@@ -81,7 +86,8 @@ const SkillsGrid = () => {
           relative
           overflow-hidden
 
-          rounded-[36px]
+          rounded-[28px]
+          sm:rounded-[36px]
 
           border
           border-slate-200/70
@@ -90,15 +96,16 @@ const SkillsGrid = () => {
           bg-white/80
           dark:bg-slate-900/70
 
-          p-8
+          p-6
           sm:p-10
           lg:p-16
 
-          backdrop-blur-lg
+          backdrop-blur-md
           md:backdrop-blur-2xl
 
           shadow-[0_25px_80px_rgba(15,23,42,0.12),0_10px_40px_rgba(99,102,241,0.15),0_0_0_1px_rgba(255,255,255,0.4)]
           dark:shadow-[0_25px_80px_rgba(0,0,0,0.45)]
+          transform-gpu
         "
       >
         <div
@@ -123,9 +130,8 @@ const SkillsGrid = () => {
 
             show: {
               transition: {
-                staggerChildren: isMobile ? 0.22 : 0.12,
-
-                delayChildren: isMobile ? 0.7 : 0.15,
+                staggerChildren: isMobile ? 0.04 : 0.07,
+                delayChildren: isMobile ? 0.1 : 0.15,
               },
             },
           }}
@@ -139,9 +145,10 @@ const SkillsGrid = () => {
             flex-wrap
             justify-center
 
-            gap-6
+            gap-4
             sm:gap-7
             lg:gap-8
+            transform-gpu
           "
         >
           {skills.map((skill) => (

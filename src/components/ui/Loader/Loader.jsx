@@ -5,7 +5,7 @@ const Loader = () => {
     <motion.div
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.7 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
       className="
         fixed
         inset-0
@@ -19,14 +19,15 @@ const Loader = () => {
 
         bg-white
         dark:bg-slate-950
+        transform-gpu
       "
     >
       {/* Background Glow */}
 
       <motion.div
         animate={{
-          x: [0, 40, 0],
-          y: [0, -30, 0],
+          x: [0, 25, 0],
+          y: [0, -20, 0],
         }}
         transition={{
           duration: 8,
@@ -35,24 +36,30 @@ const Loader = () => {
         }}
         className="
           absolute
-          -left-32
+          -left-20
           top-20
 
-          h-[420px]
-          w-[420px]
+          h-[320px]
+          w-[320px]
+          md:h-[420px]
+          md:w-[420px]
 
           rounded-full
 
           bg-indigo-500/20
 
-          blur-[120px]
+          blur-2xl
+          md:blur-[100px]
+          transform-gpu
+          will-change-transform
+          pointer-events-none
         "
       />
 
       <motion.div
         animate={{
-          x: [0, -40, 0],
-          y: [0, 30, 0],
+          x: [0, -25, 0],
+          y: [0, 20, 0],
         }}
         transition={{
           duration: 9,
@@ -61,17 +68,23 @@ const Loader = () => {
         }}
         className="
           absolute
-          -right-32
+          -right-20
           bottom-20
 
-          h-[420px]
-          w-[420px]
+          h-[320px]
+          w-[320px]
+          md:h-[420px]
+          md:w-[420px]
 
           rounded-full
 
           bg-cyan-500/20
 
-          blur-[120px]
+          blur-2xl
+          md:blur-[100px]
+          transform-gpu
+          will-change-transform
+          pointer-events-none
         "
       />
 
@@ -85,29 +98,35 @@ const Loader = () => {
             relative
 
             flex
-            h-[280px]
-            w-[280px]
+            h-[240px]
+            w-[240px]
+            sm:h-[280px]
+            sm:w-[280px]
 
             items-center
             justify-center
+            transform-gpu
           "
         >
           {/* Pulse Glow */}
 
           <motion.div
             animate={{
-              scale: [1, 1.25, 1],
+              scale: [1, 1.2, 1],
               opacity: [0.35, 0.15, 0.35],
             }}
             transition={{
-              duration: 2.5,
+              duration: 2.2,
               repeat: Infinity,
+              ease: "easeInOut",
             }}
             className="
               absolute
 
-              h-[200px]
-              w-[200px]
+              h-[160px]
+              w-[160px]
+              sm:h-[200px]
+              sm:w-[200px]
 
               rounded-full
 
@@ -115,7 +134,9 @@ const Loader = () => {
               from-indigo-500/40
               to-cyan-500/40
 
-              blur-[70px]
+              blur-xl
+              md:blur-[60px]
+              transform-gpu
             "
           />
 
@@ -126,25 +147,30 @@ const Loader = () => {
               rotate: 360,
             }}
             transition={{
-              duration: 3,
+              duration: 2.5,
               repeat: Infinity,
               ease: "linear",
             }}
             className="
               absolute
 
-              h-[240px]
-              w-[240px]
+              h-[200px]
+              w-[200px]
+              sm:h-[240px]
+              sm:w-[240px]
 
               rounded-full
 
-              border-[8px]
+              border-[6px]
+              sm:border-[8px]
               border-transparent
 
               border-t-indigo-500
               border-r-cyan-500
               border-b-purple-500
               border-l-indigo-300/30
+              transform-gpu
+              will-change-transform
             "
           />
 
@@ -155,28 +181,24 @@ const Loader = () => {
             alt="Logo"
             initial={{
               opacity: 0,
-              scale: 0.7,
+              scale: 0.8,
             }}
             animate={{
               opacity: 1,
-              scale: [1, 1.05, 1],
-              rotate: [0, 2, 0, -2, 0],
-              y: [0, -8, 0],
+              scale: [1, 1.04, 1],
+              y: [0, -6, 0],
             }}
             transition={{
               opacity: {
-                duration: 0.8,
+                duration: 0.5,
               },
               scale: {
-                duration: 2.8,
+                duration: 2.5,
                 repeat: Infinity,
-              },
-              rotate: {
-                duration: 2.8,
-                repeat: Infinity,
+                ease: "easeInOut",
               },
               y: {
-                duration: 2.8,
+                duration: 2.5,
                 repeat: Infinity,
                 ease: "easeInOut",
               },
@@ -185,11 +207,14 @@ const Loader = () => {
               relative
               z-10
 
-              h-[170px]
-              w-[170px]
+              h-[130px]
+              w-[130px]
+              sm:h-[160px]
+              sm:w-[160px]
 
               object-contain
               select-none
+              transform-gpu
             "
           />
         </div>
@@ -199,16 +224,17 @@ const Loader = () => {
         <motion.div
           initial={{
             opacity: 0,
-            y: 15,
+            y: 10,
           }}
           animate={{
             opacity: 1,
             y: 0,
           }}
           transition={{
-            delay: 0.4,
+            delay: 0.3,
+            duration: 0.4,
           }}
-          className="mt-10 text-center"
+          className="mt-8 text-center"
         >
           <div
             className="
@@ -220,7 +246,8 @@ const Loader = () => {
           >
             <span
               className="
-                text-2xl
+                text-xl
+                sm:text-2xl
                 font-semibold
 
                 text-slate-800
@@ -237,12 +264,13 @@ const Loader = () => {
                   opacity: [0.2, 1, 0.2],
                 }}
                 transition={{
-                  duration: 1,
+                  duration: 0.9,
                   repeat: Infinity,
-                  delay: dot * 0.2,
+                  delay: dot * 0.18,
                 }}
                 className="
-                  text-3xl
+                  text-2xl
+                  sm:text-3xl
                   font-bold
 
                   text-indigo-500
@@ -253,20 +281,13 @@ const Loader = () => {
             ))}
           </div>
 
-          <motion.p
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            transition={{
-              delay: 1,
-            }}
+          <p
             className="
-              mt-5
+              mt-3
+              sm:mt-4
 
-              text-sm
+              text-xs
+              sm:text-sm
               tracking-wide
 
               text-slate-500
@@ -274,7 +295,7 @@ const Loader = () => {
             "
           >
             Stay tuned, something exciting is loading... ⭐
-          </motion.p>
+          </p>
         </motion.div>
       </div>
     </motion.div>

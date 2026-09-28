@@ -55,18 +55,21 @@ const SkillModal = ({ skill, onClose }) => {
           overflow-y-auto
           overscroll-contain
 
-          bg-transparent
-          backdrop-blur-xl
+          bg-black/60
+          backdrop-blur-sm
+          md:backdrop-blur-md
 
-          px-5
-          py-8
+          px-4
+          py-6
+          sm:px-5
+          sm:py-8
         "
       >
         <motion.div
           initial={{
             opacity: 0,
-            y: 70,
-            scale: 0.9,
+            y: 25,
+            scale: 0.95,
           }}
           animate={{
             opacity: 1,
@@ -75,16 +78,17 @@ const SkillModal = ({ skill, onClose }) => {
           }}
           exit={{
             opacity: 0,
-            y: 50,
-            scale: 0.9,
+            y: 20,
+            scale: 0.95,
           }}
           transition={{
-            duration: 0.5,
+            duration: 0.3,
             ease: [0.16, 1, 0.3, 1],
           }}
           onClick={(e) => e.stopPropagation()}
           className="
             relative
+            transform-gpu
 
             mx-auto
             my-auto

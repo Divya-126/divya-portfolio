@@ -4,7 +4,6 @@ import navigationLinks from "../../../constants/navigationLinks";
 const NavbarLinks = ({ activeSection }) => {
   return (
     <motion.ul
-      layout
       className="
         hidden
 
@@ -12,9 +11,9 @@ const NavbarLinks = ({ activeSection }) => {
 
         items-center
 
-gap-4
-lg:gap-6
-xl:gap-8
+        gap-4
+        lg:gap-6
+        xl:gap-8
       "
     >
       {navigationLinks.map((link) => {
@@ -38,20 +37,19 @@ xl:gap-8
                   font-medium
                   tracking-wide
 
-                  transition-all
-                  duration-300z
+                  transition-colors
+                  duration-300
 
-                  ${
-                    isActive
-                      ? `
+                  ${isActive
+                  ? `
                         text-indigo-600
                         drop-shadow-[0_0_12px_rgba(99,102,241,0.35)]
                       `
-                      : `
+                  : `
                         text-slate-700
                         hover:text-indigo-600
                       `
-                  }
+                }
                 `}
             >
               {link.label}

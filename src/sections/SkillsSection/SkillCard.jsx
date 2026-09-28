@@ -16,8 +16,8 @@ const SkillCard = ({ skill, onClick }) => {
       variants={{
         hidden: {
           opacity: 0,
-          y: 70,
-          scale: 0.92,
+          y: isMobile ? 16 : 30,
+          scale: isMobile ? 0.95 : 0.92,
         },
 
         show: {
@@ -27,21 +27,22 @@ const SkillCard = ({ skill, onClick }) => {
         },
       }}
       transition={{
-        duration: isMobile ? 1 : 0.8,
-
+        duration: isMobile ? 0.4 : 0.55,
         ease: [0.16, 1, 0.3, 1],
       }}
       viewport={{
         once: true,
-        amount: 0.2,
+        amount: 0.1,
       }}
       className="
         group
         relative
 
         flex
-        h-32
-        w-32
+        h-28
+        w-28
+        sm:h-32
+        sm:w-32
 
         flex-col
         items-center
@@ -51,7 +52,8 @@ const SkillCard = ({ skill, onClick }) => {
 
         overflow-hidden
 
-        rounded-[32px]
+        rounded-[24px]
+        sm:rounded-[32px]
 
         border
         border-slate-200/60
@@ -60,14 +62,15 @@ const SkillCard = ({ skill, onClick }) => {
         bg-white/85
         dark:bg-slate-900/80
 
-        backdrop-blur-xl
+        backdrop-blur-md
+        md:backdrop-blur-xl
 
-        shadow-md
+        shadow-sm
 
         transition-all
-        duration-500
+        duration-300
 
-        hover:-translate-y-4
+        hover:-translate-y-2
         hover:scale-105
 
         md:hover:rotate-2
@@ -75,8 +78,9 @@ const SkillCard = ({ skill, onClick }) => {
         hover:border-indigo-200
         dark:hover:border-indigo-500/30
 
-        hover:shadow-lg
+        hover:shadow-md
         md:hover:shadow-[0_20px_50px_rgba(99,102,241,0.18)]
+        transform-gpu
       "
     >
       <div
@@ -92,7 +96,7 @@ const SkillCard = ({ skill, onClick }) => {
           opacity-0
 
           transition-all
-          duration-500
+          duration-300
 
           group-hover:opacity-100
           group-hover:from-indigo-500/10
@@ -106,12 +110,15 @@ const SkillCard = ({ skill, onClick }) => {
           relative
 
           flex
-          h-16
-          w-16
+          h-14
+          w-14
+          sm:h-16
+          sm:w-16
           items-center
           justify-center
 
-          rounded-3xl
+          rounded-2xl
+          sm:rounded-3xl
 
           bg-gradient-to-br
           from-slate-50
@@ -120,10 +127,10 @@ const SkillCard = ({ skill, onClick }) => {
           dark:from-slate-800
           dark:to-slate-900
 
-          shadow-lg
+          shadow-md
 
           transition-all
-          duration-500
+          duration-300
 
           group-hover:scale-100
           group-hover:shadow-lg
@@ -134,14 +141,16 @@ const SkillCard = ({ skill, onClick }) => {
             absolute
             inset-0
 
-            rounded-3xl
+            rounded-2xl
+            sm:rounded-3xl
 
             opacity-0
 
-            blur-xl
+            blur-lg
+            md:blur-xl
 
             transition-all
-            duration-500
+            duration-300
 
             group-hover:opacity-50
           "
@@ -152,7 +161,7 @@ const SkillCard = ({ skill, onClick }) => {
 
         {Icon && (
           <Icon
-            size={34}
+            size={isMobile ? 28 : 34}
             style={{
               color: skillInfo.color,
             }}
@@ -160,11 +169,10 @@ const SkillCard = ({ skill, onClick }) => {
               relative
               z-10
 
-              transition-all
-              duration-500
+              transition-transform
+              duration-300
 
-              group-hover:scale-125
-
+              group-hover:scale-115
               md:group-hover:-rotate-12
             "
           />
@@ -176,9 +184,11 @@ const SkillCard = ({ skill, onClick }) => {
           relative
           z-10
 
-          mt-5
+          mt-3
+          sm:mt-5
 
-          text-[13px]
+          text-xs
+          sm:text-[13px]
           font-semibold
           tracking-wide
 
